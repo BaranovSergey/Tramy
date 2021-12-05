@@ -13,15 +13,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useState} from "react";
-import {login} from "../../../actions/user";
-
-
-
+import {login} from "../modal/user";
+import {useDispatch} from "react-redux";
 const theme = createTheme();
 
 export default function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
     const handleOnChangeUserName = (event) => {
         setUserName(event.target.value);
     };
@@ -31,7 +30,7 @@ export default function SignIn() {
     const handleSubmit = (event) => {
         event.preventDefault();
     if (username !== "" && password !== ""){
-        login(username,password)
+        dispatch(login(username,password));
     }else {
         alert("Заполните пустые поля")
     }
@@ -110,23 +109,3 @@ export default function SignIn() {
         </ThemeProvider>
     );
 }
-
-// import React, {useState} from 'react';
-// import './authorization.css'
-// import Input from "../../utils/input";
-// import {login} from "../../actions/user";
-//
-// const Login = () => {
-//     const [username, setEmail] = useState("")
-//     const [password, setPassword] = useState("")
-//
-//     return (
-//         <div className='authorization'>
-//             <div className="authorization__header">Авторизация</div>
-//             <Input value={username} setValue={setEmail} type="text" placeholder="Введите email..."/>
-//             <Input value={password} setValue={setPassword} type="password" placeholder="Введите пароль..."/>
-//             <button className="authorization__btn" onClick={() => login(username, password)}>Войти</button>
-//         </div>
-//     );
-// };
-// export default Login;
