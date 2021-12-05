@@ -1,5 +1,5 @@
 import React from 'react';
-klimport MyRoutes from "./routes/Routes";
+import MyRoutes from "./routes/Routes";
 
 
 function App() {
