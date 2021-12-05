@@ -1,6 +1,6 @@
 import {Box, FormControl, FormControlLabel, Radio, RadioGroup} from "@material-ui/core";
 import React from "react";
-
+import { Field } from "react-final-form";
 export function getSteps() {
   return [
     "Тип похода",
@@ -21,16 +21,21 @@ export function getStepContent(step){
               marginBottom: 20
             }}
           >
-            <FormControl component="fieldset">
-              <RadioGroup
-                aria-label="gender"
-                name="radio-buttons-group"
-              >
-                <FormControlLabel value="Водный" control={<Radio />} label="Водный" />
-                <FormControlLabel value="Горный" control={<Radio />} label="Горный" />
-                <FormControlLabel value="Лесной" control={<Radio />} label="Лесной" />
-              </RadioGroup>
-            </FormControl>
+            {/*name - это значение ключа для названия в объекте values*/}
+            <Field name="state">
+              {({ input, meta }) => (
+                <RadioGroup
+                  aria-label="quiz"
+                  name="quiz"
+                  value={input.value}
+                  onChange={input.onChange}
+                >
+                  <FormControlLabel value="Водный" control={<Radio />} label="Водный" />
+                  <FormControlLabel value="Горный" control={<Radio />} label="Горный" />
+                  <FormControlLabel value="Лесной" control={<Radio />} label="Лесной" />
+                </RadioGroup>
+              )}
+            </Field>
           </Box>
         </>
       );
@@ -44,13 +49,16 @@ export function getStepContent(step){
               marginBottom: 20
             }}
           >
-            <FormControl component="fieldset">
-              <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+            <Field name="country">
+              {({ input, meta }) => (
+              <RadioGroup onChange={input.onChange} value={input.value} row aria-label="gender" name="row-radio-buttons-group">
                 <FormControlLabel value="Russia" control={<Radio />} label="Russia" />
                 <FormControlLabel value="USA" control={<Radio />} label="USA" />
                 <FormControlLabel value="Europe" control={<Radio />} label="Europe" />
               </RadioGroup>
-            </FormControl>
+              )}
+            </Field>
+
           </Box>
         </>
       );

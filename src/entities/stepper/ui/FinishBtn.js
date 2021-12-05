@@ -3,13 +3,14 @@ import {Button} from "@mui/material";
 import {fetchAddHike, testDataFoRequest} from "../../../feature/adding-hike/modal";
 import {useDispatch} from "react-redux";
 
-const FinishBtn = () =>{
+const FinishBtn = ({handleOnSubmit}) =>{
   const dispatch = useDispatch();
   const handleOnClick = () => {
-    dispatch(fetchAddHike(testDataFoRequest))
+    // dispatch(fetchAddHike(testDataFoRequest))
+    handleOnSubmit();
   }
   return(
-    <Button variant={"contained"} onClick={handleOnClick}>
+    <Button  variant={"contained"} onClick={handleOnClick}>
       Завершить
     </Button>
   );

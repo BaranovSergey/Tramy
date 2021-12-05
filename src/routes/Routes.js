@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Routes, Navigate} from 'react-router-dom';
 import SignIn from "../page/login/ui/login";
-import LinaerStepper from "../entities/stepper/ui/LinaerStepper";
+import LinaerStepper from "../entities/stepper/ui";
 import Test from "../components/test";
 import MasterLayout from "../layout/MasterLayout";
 import {useSelector} from "react-redux";

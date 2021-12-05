@@ -6,6 +6,7 @@ import {getStepContent, getSteps} from "../modal";
 import {makeStyles} from "@mui/styles";
 import FinishBtn from "./FinishBtn";
 import NextBtn from "./NextBtn";
+import { Form, Field } from "react-final-form";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -23,7 +24,9 @@ const useStyles = makeStyles(() => ({
 const LinaerStepper = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0)
+
   const steps = getSteps();
+
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -31,6 +34,12 @@ const LinaerStepper = () => {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const handleOnSubmit = (values) => {
+    console.log('HELLLO');
+    console.log('values', values);
+    /*здесь будет передача данных в метод который будет отправлять данные*/
+  }
 
   return (
     <div className={classes.root}>
@@ -50,14 +59,21 @@ const LinaerStepper = () => {
             <Typography variant="h3" align={"center"}>SPASIBO BOLSHOI</Typography>
           ) : (
             <>
-              <form>{getStepContent(activeStep)}</form>
-              <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
-                <Button variant={"outlined"} onClick={handleBack} disabled={activeStep === 0}>Предыдущий шаг</Button>
-                <Box sx={{flex: '1 1 auto'}}/>
+              <Form
+                onSubmit={handleOnSubmit}
+                render={({ handleSubmit, form, submitting, pristine, values }) => (
+                  <form onSubmit={handleSubmit}>
 
-                {activeStep === 2 ? <FinishBtn/> : <NextBtn handleNextStep={handleNext}/>}
+                    {getStepContent(activeStep)}
 
-              </Box>
+                    <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
+                      <Button variant={"outlined"} onClick={handleBack} disabled={activeStep === 0}>Предыдущий шаг</Button>
+                      <Box sx={{flex: '1 1 auto'}}/>
+                      {activeStep === 2 ? <FinishBtn handleOnSubmit={handleSubmit} /> : <NextBtn handleNextStep={handleNext}/>}
+                    </Box>
+                  </form>
+                    )}
+                />
             </>
           )}
       </div>
