@@ -4,6 +4,9 @@ import SignIn from "../page/login/ui/login";
 import LinaerStepper from "../entities/stepper/ui/LinaerStepper";
 import Test from "../components/test";
 import MasterLayout from "../layout/MasterLayout";
+import {useSelector} from "react-redux";
+
+
 
 const MyRoutes = () => {
   const isUserAuthenticated = useSelector(state => state.auth.accessToken);

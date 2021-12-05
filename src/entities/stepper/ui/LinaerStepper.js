@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import {Box} from "@material-ui/core";
 import {getStepContent, getSteps} from "../modal";
 import {makeStyles} from "@mui/styles";
+import FinishBtn from "./FinishBtn";
+import NextBtn from "./NextBtn";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -52,8 +54,9 @@ const LinaerStepper = () => {
               <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
                 <Button variant={"outlined"} onClick={handleBack} disabled={activeStep === 0}>Предыдущий шаг</Button>
                 <Box sx={{flex: '1 1 auto'}}/>
-                <Button variant={"contained"}
-                        onClick={handleNext}>{activeStep === 2 ? "Завершить" : "Следуюющий шаг"}</Button>
+
+                {activeStep === 2 ? <FinishBtn/> : <NextBtn handleNextStep={handleNext}/>}
+
               </Box>
             </>
           )}
