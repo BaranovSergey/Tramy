@@ -1,15 +1,22 @@
 import React from "react";
 import {Route, Routes} from 'react-router-dom';
-import SignIn from "../components/authorization/login";
-import LinaerStepper from "../components/stepper/LinaerStepper";
-import Test from "../components/test"
+import SignIn from "../page/login/ui/login";
+import LinaerStepper from "../entities/stepper/ui/LinaerStepper";
+import Test from "../components/test";
+import MasterLayout from "../layout/MasterLayout";
+
 const MyRoutes = () => {
-    return(
-        <Routes>
-            <Route path="/login" element={SignIn}/>
-            <Route path="/marhruts" element={LinaerStepper} />
-            <Route path="/test" element={Test} />
-        </Routes>
-    );
+  return (
+    <Routes>
+      {/*sub layout*/}
+      <Route path="/login" element={<SignIn/>}/>
+      {/*master layout*/}
+      <Route path="/marhruts" element={<MasterLayout><LinaerStepper/></MasterLayout>}/>
+      <Route path="/" element={
+        <MasterLayout>
+          <Test/>
+        </MasterLayout>}/>
+    </Routes>
+  );
 };
 export default MyRoutes;

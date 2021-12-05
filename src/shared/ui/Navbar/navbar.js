@@ -7,11 +7,16 @@ import Button from '@mui/material/Button';
 import {AccountCircle, ArrowDropDown, Landscape} from "@material-ui/icons";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [anchorE1, setAnchorE1] = React.useState(null)
+
+    const handleOnClickLogin = () => {
+        navigate('/login');
+    }
     const handleClose = () => {
         setAnchorE1(null)
     }
@@ -37,7 +42,7 @@ const Navbar = () => {
                             <MenuItem><Button color={"inherit"} component={Link} to="/marhruts" >Загрузить новый</Button></MenuItem>
                             <MenuItem><Button color={"inherit"} component={Link} to="/login" >Выбрать существующий</Button></MenuItem>
                         </Menu>
-                        <Button component={Link} to="/" variant="contained" endIcon={<AccountCircle/>} color="secondary">Войти</Button>
+                        <Button onClick={handleOnClickLogin} variant="contained" endIcon={<AccountCircle/>} color="secondary">Войти</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
