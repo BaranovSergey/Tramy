@@ -4,8 +4,9 @@ import { Field } from "react-final-form";
 export function getSteps() {
   return [
     "Тип похода",
-    "Выбор региона",
-    "Ещё что-то"
+    "Выбор даты",
+    "Создание группы",
+    "Загрузка маршрута"
   ];
 }
 

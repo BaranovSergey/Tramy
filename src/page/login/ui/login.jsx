@@ -12,15 +12,28 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {login} from "../modal/user";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router";
 const theme = createTheme();
 
 export default function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+
+    const isUserAuthenticated = useSelector(state => state.auth.accessToken !== '');
+
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+
+        if (isUserAuthenticated) {
+            navigate('/marhruts')
+        }
+    },[isUserAuthenticated])
+
     const handleOnChangeUserName = (event) => {
         setUserName(event.target.value);
     };
@@ -35,6 +48,7 @@ export default function SignIn() {
         alert("Заполните пустые поля")
     }
     };
+
 
     return (
         <ThemeProvider theme={theme}>
@@ -85,6 +99,7 @@ export default function SignIn() {
                         />
                         <Button
                             type="submit"
+                            // onClick={handleTest}
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}

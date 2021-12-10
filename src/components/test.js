@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const Test = () => {
-    return(
+    return (
         <h1>Test</h1>
     );
 };
