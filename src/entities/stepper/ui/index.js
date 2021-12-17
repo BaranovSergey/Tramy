@@ -9,6 +9,7 @@ import NextBtn from "./NextBtn";
 import {Form, Field} from "react-final-form";
 import {useNavigate} from "react-router";
 import {useSelector} from "react-redux";
+import FormStateToRedux from "../../../shared/lib/FormStateToRedux";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -30,7 +31,7 @@ const LinaerStepper = () => {
 
     const isUserAuthenticated = useSelector(state => state.auth.accessToken !== '');
     useEffect(() => {
-        if (!isUserAuthenticated){
+        if (!isUserAuthenticated) {
             navigate('/login')
         }
     }, [isUserAuthenticated])
@@ -45,7 +46,6 @@ const LinaerStepper = () => {
     };
 
     const handleOnSubmit = (values) => {
-        console.log('HELLLO');
         console.log('values', values);
         /*здесь будет передача данных в метод который будет отправлять данные*/
     }
@@ -65,14 +65,14 @@ const LinaerStepper = () => {
                 </Stepper>
                 {
                     activeStep === 4 ? (
-                        <Typography variant="h3" align={"center"}>SPASIBO BOLSHOI</Typography>
+                        <Typography variant="h3" align={"center"}>Поход успешно создан</Typography>
                     ) : (
                         <>
                             <Form
                                 onSubmit={handleOnSubmit}
                                 render={({handleSubmit, form, submitting, pristine, values}) => (
                                     <form onSubmit={handleSubmit}>
-
+                                        <FormStateToRedux form="createHike" />
                                         {getStepContent(activeStep)}
 
                                         <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>

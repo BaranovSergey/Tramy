@@ -63,8 +63,8 @@ const Navbar = () => {
 
                         <MenuItem>
                             <Button color={"inherit"}
-                                    component={Link}
-                                    to="/login"
+                                    // component={Link}
+                                    // to="/login"
                             >
                                 Выбрать существующий
                             </Button>
