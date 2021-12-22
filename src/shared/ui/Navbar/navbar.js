@@ -17,6 +17,7 @@ const Navbar = () => {
 
     const [anchorE1, setAnchorE1] = React.useState(null)
 
+
     const handleOnClickLogin = () => {
         navigate('/login');
     }
@@ -44,7 +45,7 @@ const Navbar = () => {
                     <Typography style={{marginRight: 200}} variant="h6">
                         Tramy
                     </Typography>
-                    <Button style={{marginRight: 860}} startIcon={<ArrowDropDown/>} color={"inherit"}
+                    <Button style={{marginRight: "auto"}} startIcon={<ArrowDropDown/>} color={"inherit"}
                             onClick={openMenu}>
                         Маршруты
                     </Button>

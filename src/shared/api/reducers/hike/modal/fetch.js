@@ -81,11 +81,12 @@ export const createHike = () => async (dispatch, getState) => {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
-            'Authorization': userToken
+            'Authorization': 'Bearer '+userToken
         },
     }
 
     fetch(createHikeUlr, config)
+
         .then(res => {
             if (res.status === 200) {
                 alert('Hike успешно добавлен!');
@@ -93,4 +94,5 @@ export const createHike = () => async (dispatch, getState) => {
             }
         })
         .catch(error => console.error(error))
+
 };

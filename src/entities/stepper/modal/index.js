@@ -2,6 +2,7 @@ import {Box, FormControl, FormControlLabel, Radio, RadioGroup} from "@material-u
 import React from "react";
 import {Field} from "react-final-form";
 import BasicDateRangePicker from "../ui/data";
+import SearchUser from "../ui/searchUser";
 
 export function getSteps() {
     return [
@@ -62,18 +63,12 @@ export function getStepContent(step) {
                     <Box
                         sx={{
                             marginTop: 25,
+                            marginBottom: 20,
+                            justifyContent: 'center',
                             display: 'flex',
-                            marginBottom: 20
                         }}
                     >
-                        <FormControl component="fieldset">
-                            <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
-                                <FormControlLabel value="что-нибудь" control={<Radio/>} label="что-нибудь"/>
-                                <FormControlLabel value="что-нибудь" control={<Radio/>} label="что-нибудь"/>
-                                <FormControlLabel value="что-нибудь" control={<Radio/>} label="что-нибудь"/>
-                                <FormControlLabel value="что-нибудь" control={<Radio/>} label="что-нибудь"/>
-                            </RadioGroup>
-                        </FormControl>
+                        <SearchUser/>
                     </Box>
                 </>
             )

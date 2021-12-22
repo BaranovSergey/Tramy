@@ -7,7 +7,6 @@ import MasterLayout from "../layout/MasterLayout";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router";
 
-
 const MyRoutes = () => {
 
     return (
