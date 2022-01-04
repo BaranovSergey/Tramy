@@ -31,8 +31,7 @@ const Navbar = () => {
     const goToCreateHike = () => {
         if (isUserAuthenticated) {
             navigate('/marhruts');
-        }
-        else {
+        } else {
             navigate('/login');
         }
     };
@@ -45,6 +44,8 @@ const Navbar = () => {
                     <Typography style={{marginRight: 200}} variant="h6">
                         Tramy
                     </Typography>
+
+                    <Button onClick={() => navigate('/all-hike')}>See all hike </Button>
                     <Button style={{marginRight: "auto"}} startIcon={<ArrowDropDown/>} color={"inherit"}
                             onClick={openMenu}>
                         Маршруты
@@ -64,8 +65,8 @@ const Navbar = () => {
 
                         <MenuItem>
                             <Button color={"inherit"}
-                                    // component={Link}
-                                    // to="/login"
+                                // component={Link}
+                                // to="/login"
                             >
                                 Выбрать существующий
                             </Button>

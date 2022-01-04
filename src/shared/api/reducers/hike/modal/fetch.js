@@ -1,4 +1,5 @@
 import {url} from "../../../../confing/url";
+import {setAllHike} from "./index";
 
 
 export const getHikeById = (hikeId) => async (dispatch, getState) => {
@@ -23,7 +24,8 @@ export const getHikeById = (hikeId) => async (dispatch, getState) => {
 };
 
 
-const getAllHike = (limit, skip) => async (dispatch, getState) => {
+export const getAllHike = (limit, skip) => async (dispatch, getState) => {
+    const getHikeUrl = `${url}/Hike/${limit}/${skip}`;
     const userToken = getState().auth.accessToken;
     /*
     * что бы получить данные по какому-то hike тебе нужно
@@ -32,16 +34,18 @@ const getAllHike = (limit, skip) => async (dispatch, getState) => {
     const config = {
         method: 'GET',
         headers: {
-            'Authorization': userToken
+            'accept': 'text/plain',
+            'Authorization': `Bearer ${userToken}`,
         },
-    }
+    };
 
-    const getHikeUrl = `${url}/Hike/${limit}/${skip}`
     fetch(getHikeUrl, config)
         .then(res => (res.json()))
-        .then((json) => {
+        .then((data) => {
+            dispatch(setAllHike({data: data}));
             // в этом теле функции тебе надо сохранить данные
         })
+        .catch(e => console.error(e));
 };
 
 export const createHike = () => async (dispatch, getState) => {
@@ -81,18 +85,16 @@ export const createHike = () => async (dispatch, getState) => {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
-            'Authorization': 'Bearer '+userToken
+            'Authorization': `Bearer ${userToken}`,
+            'Content-Type': 'application/json'
         },
     }
 
     fetch(createHikeUlr, config)
-
         .then(res => {
             if (res.status === 200) {
                 alert('Hike успешно добавлен!');
-                return res.json()
             }
         })
-        .catch(error => console.error(error))
-
+        .catch(error => console.error(error));
 };

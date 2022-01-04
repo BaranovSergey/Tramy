@@ -72,7 +72,7 @@ const LinaerStepper = () => {
                                 onSubmit={handleOnSubmit}
                                 render={({handleSubmit, form, submitting, pristine, values}) => (
                                     <form onSubmit={handleSubmit}>
-                                        <FormStateToRedux form="createHike" />
+                                        <FormStateToRedux form="createHike"/>
                                         {getStepContent(activeStep)}
 
                                         <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>

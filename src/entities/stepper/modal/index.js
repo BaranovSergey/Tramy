@@ -2,7 +2,9 @@ import {Box, FormControl, FormControlLabel, Radio, RadioGroup} from "@material-u
 import React from "react";
 import {Field} from "react-final-form";
 import BasicDateRangePicker from "../ui/data";
-import SearchUser from "../ui/searchUser";
+import SearchUser from "../ui/search-user";
+import EnhancedTable from "../../../shared/ui/table/ui";
+import GroupCreation from "../../group-creation/ui";
 
 export function getSteps() {
     return [
@@ -60,16 +62,7 @@ export function getStepContent(step) {
         case 2:
             return (
                 <>
-                    <Box
-                        sx={{
-                            marginTop: 25,
-                            marginBottom: 20,
-                            justifyContent: 'center',
-                            display: 'flex',
-                        }}
-                    >
-                        <SearchUser/>
-                    </Box>
+                    <GroupCreation/>
                 </>
             )
         default:
