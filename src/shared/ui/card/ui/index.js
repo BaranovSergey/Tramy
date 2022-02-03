@@ -5,6 +5,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {useEffect, useState} from "react";
+import HikeItem from "../../../../entities/hike-card/ui/hikeItem";
 
 const bull = (
     <Box
@@ -19,18 +21,10 @@ const card = (
     <React.Fragment>
         <CardContent>
             <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
-                Word of the Day
+                Тип похода
             </Typography>
-            <Typography variant="h5" component="div">
-                be{bull}nev{bull}o{bull}lent
-            </Typography>
-            <Typography sx={{mb: 1.5}} color="text.secondary">
-                adjective
-            </Typography>
-            <Typography variant="body2">
-                well meaning and kindly.
-                <br/>
-                {'"a benevolent smile"'}
+            <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
+                Дата
             </Typography>
         </CardContent>
         <CardActions>
@@ -39,10 +33,16 @@ const card = (
     </React.Fragment>
 );
 
-export default function OutlinedCard() {
+export default function OutlinedCard({hike}) {
+    useEffect(() => {
+        console.log(hike)
+    })
+    console.log('load')
     return (
         <Box sx={{minWidth: 275}}>
-            <Card variant="outlined">{card}</Card>
+            <Card variant="outlined">
+                <HikeItem type={hike.hikeType} startDate={hike.startDate} />
+            </Card>
         </Box>
     );
 }

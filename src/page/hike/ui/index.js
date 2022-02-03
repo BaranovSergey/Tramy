@@ -10,12 +10,12 @@ const AllHike = () => {
     const allHike = useSelector(state => state.hike.allHikes);
     useEffect(() => {
         //    у нас будет загрузка всех hike
-        dispatch(getAllHike(10,1));
+        dispatch(getAllHike(20,0));
     }, []);
-
     if (allHike.length === 0) {
         return (<Typography variant={'h3'}>Никаких походов нет</Typography>)
     }
+
     return (
         <FDisplayHikeCards allHikes={allHike}/>
     );

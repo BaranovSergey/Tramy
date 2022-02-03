@@ -2,9 +2,8 @@ import {Box, FormControl, FormControlLabel, Radio, RadioGroup} from "@material-u
 import React from "react";
 import {Field} from "react-final-form";
 import BasicDateRangePicker from "../ui/data";
-import SearchUser from "../ui/search-user";
-import EnhancedTable from "../../../shared/ui/table/ui";
 import GroupCreation from "../../group-creation/ui";
+import MapGlCustom from "../ui/map/ui";
 
 export function getSteps() {
     return [
@@ -67,5 +66,11 @@ export function getStepContent(step) {
             )
         default:
             return "unknown step"
+        case 3:
+            return (
+                <>
+                    <MapGlCustom/>
+                </>
+            )
     }
 }

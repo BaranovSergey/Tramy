@@ -2,7 +2,6 @@ import React from 'react';
 import EHikeCard from "../../../entities/hike-card/ui";
 import {Box} from "@mui/material";
 
-
 const FDisplayHikeCards = ({allHikes}) => {
 
     return (
@@ -16,7 +15,7 @@ const FDisplayHikeCards = ({allHikes}) => {
         }}
         >
             {allHikes.map((hike, index) => (
-                <EHikeCard name={hike.name}/>
+                <EHikeCard item={hike}/>
             ))}
         </Box>
     );

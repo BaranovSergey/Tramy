@@ -44,8 +44,6 @@ const Navbar = () => {
                     <Typography style={{marginRight: 200}} variant="h6">
                         Tramy
                     </Typography>
-
-                    <Button onClick={() => navigate('/all-hike')}>See all hike </Button>
                     <Button style={{marginRight: "auto"}} startIcon={<ArrowDropDown/>} color={"inherit"}
                             onClick={openMenu}>
                         Маршруты
@@ -65,8 +63,7 @@ const Navbar = () => {
 
                         <MenuItem>
                             <Button color={"inherit"}
-                                // component={Link}
-                                // to="/login"
+                                    onClick={() => navigate('/all-hike')}
                             >
                                 Выбрать существующий
                             </Button>

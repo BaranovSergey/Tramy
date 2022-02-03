@@ -6,7 +6,7 @@ import OutlinedCard from "../../../shared/ui/card/ui";
 const EHikeCard = ({name}) => {
 
     return (
-        <OutlinedCard/>
+        <OutlinedCard hike={item}/>
     );
 };
 
