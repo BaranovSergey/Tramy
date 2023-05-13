@@ -55,7 +55,7 @@ const Navbar = () => {
                           onClose={handleClose}>
                         <MenuItem>
                             <Button color={"inherit"}
-                                    onClick={() => navigate('/marhruts')}
+                                    onClick={goToCreateHike}
                             >
                                 Загрузить новый
                             </Button>

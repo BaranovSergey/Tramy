@@ -22,17 +22,17 @@ export default function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
-    // const isUserAuthenticated = useSelector(state => state.auth.accessToken !== '');
+    const isUserAuthenticated = useSelector(state => state.auth.accessToken !== '');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //
-    //     if (isUserAuthenticated) {
-    //         navigate('/marhruts')
-    //     }
-    // },[isUserAuthenticated])
+    useEffect(() => {
+
+        if (isUserAuthenticated) {
+            navigate('/marhruts')
+        }
+    },[isUserAuthenticated])
 
     const handleOnChangeUserName = (event) => {
         setUserName(event.target.value);

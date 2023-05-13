@@ -1,1 +1,1 @@
-export const url = 'http://195.133.48.252:8080'
+export const url = 'http://195.133.48.252:8080/api'
