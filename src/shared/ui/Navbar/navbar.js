@@ -22,6 +22,7 @@ const Navbar = () => {
     const handleOnClickLogin = () => {
         navigate('/login');
     }
+
     const handleClose = () => {
         setAnchorE1(null)
     }
@@ -73,13 +74,15 @@ const Navbar = () => {
                         </MenuItem>
                     </Menu>
 
-                    <Button onClick={handleOnClickLogin}
-                            variant="contained"
-                            endIcon={<AccountCircle/>}
-                            color="secondary"
-                    >
-                        {buttonText}
-                    </Button>
+                    <Link to="/personal-account">
+                        <Button onClick={handleOnClickLogin}
+                                variant="contained"
+                                endIcon={<AccountCircle/>}
+                                color="secondary"
+                        >
+                            {buttonText}
+                        </Button>
+                    </Link>
 
                 </Toolbar>
             </AppBar>

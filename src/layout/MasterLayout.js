@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => {
     }
   )
 });
-/*children - то что передаешь внутырь <MasterLayout>КАКОЙ-ТО КОМОПОНЕНТ</MasterLayout>*/
+/*children - то что передаешь внутрь <MasterLayout>КАКОЙ-ТО КОМОПОНЕНТ</MasterLayout>*/
 const MasterLayout = ({children}) => {
   const classes = useStyles();
   return (

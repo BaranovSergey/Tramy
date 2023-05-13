@@ -7,9 +7,9 @@ import {createHike, getHikeById} from "../../../shared/api/reducers/hike/modal/f
 const FinishBtn = ({handleOnSubmit}) => {
     const dispatch = useDispatch();
     const handleOnClick = () => {
-        // dispatch(fetchAddHike(testDataFoRequest))
+        dispatch(fetchAddHike())
         handleOnSubmit();
-        dispatch(createHike());
+        // dispatch(createHike());
     }
 
 

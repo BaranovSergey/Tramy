@@ -48,8 +48,10 @@ export const getAllHike = (limit, skip) => async (dispatch, getState) => {
         .catch(e => console.error(e));
 };
 
+
+
 export const createHike = () => async (dispatch, getState) => {
-    const createHikeUlr = `${url}/Hike`;
+    const createHikeUrl = `${url}/Hike`;
     const userToken = getState().auth.accessToken;
 
     const body = {
@@ -78,7 +80,6 @@ export const createHike = () => async (dispatch, getState) => {
         "state": "string",
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "creationDate": "2021-12-17T15:23:30.847Z"
-
     };
 
     const config = {
@@ -90,11 +91,12 @@ export const createHike = () => async (dispatch, getState) => {
         },
     }
 
-    fetch(createHikeUlr, config)
-        .then(res => {
-            if (res.status === 200) {
-                alert('Hike успешно добавлен!');
-            }
-        })
-        .catch(error => console.error(error));
+    try {
+        const response = await fetch(createHikeUrl, config);
+        if (response.status === 200) {
+            alert('Hike успешно добавлен!');
+        }
+    } catch (error) {
+        console.error(error);
+    }
 };
