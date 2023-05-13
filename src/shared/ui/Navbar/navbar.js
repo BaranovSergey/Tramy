@@ -14,9 +14,10 @@ import {useSelector} from "react-redux";
 const Navbar = () => {
     const navigate = useNavigate();
     const isUserAuthenticated = useSelector(state => state.auth.accessToken !== '');
+    const userName = useSelector(state => state.auth.firstName + " " + state.auth.lastName);
+
 
     const [anchorE1, setAnchorE1] = React.useState(null)
-
 
     const handleOnClickLogin = () => {
         navigate('/login');
@@ -35,6 +36,8 @@ const Navbar = () => {
             navigate('/login');
         }
     };
+
+    const buttonText = isUserAuthenticated ? userName : "Войти";
 
     return (
         <Box sx={{flexGrow: 1}}>
@@ -75,7 +78,7 @@ const Navbar = () => {
                             endIcon={<AccountCircle/>}
                             color="secondary"
                     >
-                        Войти
+                        {buttonText}
                     </Button>
 
                 </Toolbar>
@@ -83,4 +86,5 @@ const Navbar = () => {
         </Box>
     )
 };
+
 export default Navbar;

@@ -99,10 +99,6 @@ export default function EnhancedTable({rows, headCells}) {
     return (
         <Box sx={{width: '100%'}}>
             <Paper sx={{width: '100%', mb: 2}}>
-                <EnhancedTableToolbar numSelected={selected.length}
-                                      onDelete={resetSelectedItem}
-                                      onAddPerson={addPerson}
-                />
                 <TableContainer>
                     <Table
                         sx={{minWidth: 750}}
@@ -176,15 +172,6 @@ export default function EnhancedTable({rows, headCells}) {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]}
-                    component="div"
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
             </Paper>
         </Box>
     );
