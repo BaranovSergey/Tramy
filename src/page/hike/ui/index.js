@@ -3,6 +3,8 @@ import FDisplayHikeCards from "../../../feature/display-hike-card/ui";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllHike} from "../../../shared/api/reducers/hike/modal/fetch";
 import {Typography} from "@mui/material";
+import MediaCard from "../../../test/CardHike";
+import Album from "../../../test/CardHike";
 
 const AllHike = () => {
     const dispatch = useDispatch();
@@ -17,7 +19,7 @@ const AllHike = () => {
     }
 
     return (
-        <FDisplayHikeCards allHikes={allHike}/>
+            <Album/>
     );
 };
 

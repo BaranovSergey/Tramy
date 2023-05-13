@@ -1,1 +1,1 @@
-export const url = 'https://tramy.life/api'
+export const url = 'http://195.133.48.252:8080'

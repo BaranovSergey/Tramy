@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mapbox/mapbox-gl-draw": "^1.3.0",
     "@mui/icons-material": "^5.0.5",
     "@mui/lab": "^5.0.0-alpha.60",
-    "@mui/material": "^5.0.6",
+    "@mui/material": "^5.11.1",
     "@mui/styled-engine-sc": "^5.0.4",
     "@mui/styles": "^5.2.2",
     "@reduxjs/toolkit": "^1.6.2",
@@ -35,7 +35,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -59,7 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/core": "^4.12.3",
+    "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.2",
     "prop-types": "^15.7.2"
   }

@@ -68,9 +68,17 @@ export function getStepContent(step) {
             return "unknown step"
         case 3:
             return (
+                <Box
+                    sx={{
+                        marginTop: 25,
+                        marginBottom: 20
+                    }}
+                >
                 <>
                     <MapGlCustom/>
                 </>
+                </Box>
+
             )
     }
 }

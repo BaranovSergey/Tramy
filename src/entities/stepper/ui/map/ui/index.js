@@ -57,7 +57,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2VyZ2V5MTQ4OCIsImEiOiJja3o3Mmd0Z2YwMDNpMm9yc
 
 const useStyles = makeStyles(() => ({
     root:{
-        height: 300
+        height: 450,
+        borderRadius: 15
     }
 }))
 
@@ -67,15 +68,15 @@ const MapGlCustom = () => {
     const mapContainer = useRef(null);
     const map = useRef(null);
 
-    const [lng, setLng] = useState(-74.6809914155087);
-    const [lat, setLat] = useState(43.44757643131413);
+    const [lng, setLng] = useState(37.82360246830771);
+    const [lat, setLat] = useState(55.80228480298555);
     const [zoom, setZoom] = useState(9);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
-            style: 'mapbox://styles/mapbox/streets-v11',
+            style: 'mapbox://styles/sergey1488/ckz72srbe000215pnqvpmo3hn',
             center: [lng, lat],
             zoom: zoom
         });
@@ -172,7 +173,7 @@ const MapGlCustom = () => {
 
 
     return (
-        <div id={'mapTTT'} style={{width:"500px", height:"300px"}}>
+        <div id={'mapTTT'}>
             <div ref={mapContainer} className={classes.root} />
         </div>
     );

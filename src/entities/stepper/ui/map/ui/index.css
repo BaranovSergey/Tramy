@@ -1,3 +1,5 @@
-.map-container {
-    height: 400px;
+.karta {
+    width: 300px;
+    height: 300px;
+    border-radius: 4px;
 }
