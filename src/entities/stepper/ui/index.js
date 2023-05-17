@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Button, Stepper, Step, StepLabel} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Box} from "@material-ui/core";
-import {getStepContent, getSteps} from "../modal";
+import {getStepContent, getSteps} from "../lib/helper";
 import {makeStyles} from "@mui/styles";
 import FinishBtn from "./FinishBtn";
 import NextBtn from "./NextBtn";

@@ -1,10 +1,10 @@
 import React from "react";
 import {Route, Routes} from 'react-router-dom';
-import SignIn from "../page/login/ui/login";
-import LinaerStepper from "../entities/stepper/ui";
-import MasterLayout from "../layout/MasterLayout";
-import AllHike from "../page/hike/ui";
-import PersonalAccount from "../page/personal-account/personal-account";
+import SignIn from "../../page/login/ui/login";
+import LinaerStepper from "../../entities/stepper/ui";
+import MasterLayout from "../../layout/MasterLayout";
+import AllHike from "../../page/hike/ui";
+import PersonalAccount from "../../page/personal-account/personal-account";
 
 const MyRoutes = () => {
 

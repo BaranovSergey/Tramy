@@ -11,6 +11,7 @@
     "@mui/material": "^5.11.1",
     "@mui/styled-engine-sc": "^5.0.4",
     "@mui/styles": "^5.2.2",
+    "@mui/x-data-grid": "^6.4.0",
     "@reduxjs/toolkit": "^1.6.2",
     "@syncfusion/ej2-react-calendars": "^19.3.56",
     "@testing-library/jest-dom": "^5.14.1",
@@ -35,7 +36,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start --tls-max-v1.2",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

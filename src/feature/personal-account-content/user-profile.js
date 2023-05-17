@@ -31,7 +31,7 @@ const UserProfile = () => {
     const userEmail = useSelector(state => state.auth.email);
 
     return (
-        <Box sx={{marginTop: 4}}>
+        <Box sx={{marginTop: 4, marginRight: 6}}>
             <UpdTypography variant="h5" component="h2"
             >
                 Мой профиль
@@ -44,7 +44,7 @@ const UserProfile = () => {
             >
                 <ListItem>
                     <ListItemAvatar>
-                        <Avatar sx={{ width: 200, height: 200, borderRadius: 10, marginLeft: "30%"}} src="https://pravo.ru/store/images/4/23593.jpg" />
+                        <Avatar sx={{ width: 200, height: 200, borderRadius: 10, marginLeft: "30%"}} src="https://sun9-69.userapi.com/impf/Mz685ma3ZPU6qCUCfR-HG-FeJi2f45gSWGqFmQ/3Xbe_hGAj9Q.jpg?size=1215x2160&quality=96&sign=0ccc4ac3b1e77db54d2d386491c0ae49&type=album" />
                     </ListItemAvatar>
                 </ListItem>
                 <ListItem>

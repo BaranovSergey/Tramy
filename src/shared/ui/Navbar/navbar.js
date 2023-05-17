@@ -38,7 +38,7 @@ const Navbar = () => {
         }
     };
 
-    const buttonText = isUserAuthenticated ? userName : "Войти";
+    // const buttonText = isUserAuthenticated ? userName : "Войти";
 
     return (
         <Box sx={{flexGrow: 1}}>
@@ -74,15 +74,23 @@ const Navbar = () => {
                         </MenuItem>
                     </Menu>
 
-                    <Link to="/personal-account">
+                    {isUserAuthenticated ? <Link to="/personal-account">
                         <Button onClick={handleOnClickLogin}
                                 variant="contained"
                                 endIcon={<AccountCircle/>}
                                 color="secondary"
                         >
-                            {buttonText}
+                            {userName}
                         </Button>
-                    </Link>
+                    </Link> : <Link to="/login">
+                        <Button onClick={handleOnClickLogin}
+                                variant="contained"
+                                endIcon={<AccountCircle/>}
+                                color="secondary"
+                        >
+                            Войти
+                        </Button>
+                    </Link>}
 
                 </Toolbar>
             </AppBar>

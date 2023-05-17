@@ -1,10 +1,21 @@
 import {Box, FormControl, FormControlLabel, Radio, RadioGroup} from "@material-ui/core";
-import React from "react";
+import React, {useState} from "react";
 import {Field} from "react-final-form";
 import BasicDateRangePicker from "../ui/data";
 import GroupCreation from "../../group-creation/ui";
 import MapGlCustom from "../ui/map/ui";
-
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Paper,
+    TextField,
+    Button
+} from '@mui/material';
+import CampingTable from "../../camping-table/ui";
 export function getSteps() {
     return [
         "Тип похода",
@@ -35,9 +46,9 @@ export function getStepContent(step) {
                                     value={input.value}
                                     onChange={input.onChange}
                                 >
-                                    <FormControlLabel value="Водный" control={<Radio/>} label="Водный"/>
-                                    <FormControlLabel value="Горный" control={<Radio/>} label="Горный"/>
-                                    <FormControlLabel value="Forest" control={<Radio/>} label="Лесной"/>
+                                    <FormControlLabel value={'0'} control={<Radio/>} label="Водный"/>
+                                    <FormControlLabel value={'1'} control={<Radio/>} label="Горный"/>
+                                    <FormControlLabel value={'2'} control={<Radio/>} label="Лесной"/>
                                 </RadioGroup>
                             )}
                         </Field>
@@ -61,7 +72,7 @@ export function getStepContent(step) {
         case 2:
             return (
                 <>
-                    <GroupCreation/>
+                    <CampingTable/>
                 </>
             )
         default:
