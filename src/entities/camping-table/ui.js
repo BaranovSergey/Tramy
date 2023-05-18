@@ -15,7 +15,6 @@ import {
     Typography
 } from '@mui/material';
 import {items, solveBackpackProblem} from "./lib/helper";
-import {useSelector} from "react-redux";
 
 function CampingTable() {
     const [people, setPeople] = useState([
@@ -26,7 +25,6 @@ function CampingTable() {
         { name: 'David', invited: false, backpackVolume: 0 },
         { name: 'Emily', invited: false, backpackVolume: 0 },
     ]);
-    const users = useSelector(state => state.foundUsers.users);
     const [selectedPeople, setSelectedPeople] = useState([]);
     const [backpackSolution, setBackpackSolution] = useState({});
     const [filteredPeople, setFilteredPeople] = useState(people);
@@ -100,7 +98,7 @@ function CampingTable() {
             <Autocomplete
                 options={people.map((person) => person.name)}
                 renderInput={(params) => (
-                    <TextField {...params} label="Search by Name" variant="outlined" />
+                    <TextField {...params} label="Поиск по имени" variant="outlined" />
                 )}
                 onInputChange={handleNameSearch}
             />
@@ -109,10 +107,10 @@ function CampingTable() {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Name</TableCell>
+                            <TableCell>Имя</TableCell>
                             <TableCell align="center">Приглашение отправлено</TableCell>
                             <TableCell align="center">Размер рюкзака в л.</TableCell>
-                            <TableCell align="center">Пригласить</TableCell>
+                            <TableCell align="center">Приглашение</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -132,7 +130,7 @@ function CampingTable() {
                                         variant="contained"
                                         onClick={() => handleInviteClick(index + startIndex)}
                                     >
-                                        {person.invited ? 'Cancel' : 'Invite'}
+                                        {person.invited ? 'Отменить' : 'Пригласить'}
                                     </Button>
                                 </TableCell>
                             </TableRow>
@@ -153,8 +151,8 @@ function CampingTable() {
                 ))}
             </div>
 
-            <div style={{ marginTop: '2rem' }}>
-                <Typography variant="h5">Invited People</Typography>
+            <div style={{ marginTop: '2rem', textAlign: 'center', alignItems: 'center'}}>
+                <Typography variant="h5">Приглашённые друзья</Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1rem' }}>
                     {invitedPeople.map((person, index) => (
                         <Card key={index} style={{ width: '200px', marginRight: '1rem', marginBottom: '1rem' }}>
@@ -168,7 +166,7 @@ function CampingTable() {
             </div>
 
             <Button variant="contained" onClick={handleSolveClick} disabled={selectedPeople.length === 0}>
-                Solve Backpack Problem
+                Распределить вещи
             </Button>
 
             {Object.keys(backpackSolution).length > 0 && (

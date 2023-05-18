@@ -11,6 +11,7 @@
     "@mui/material": "^5.11.1",
     "@mui/styled-engine-sc": "^5.0.4",
     "@mui/styles": "^5.2.2",
+    "@mui/system": "^5.13.1",
     "@mui/x-data-grid": "^6.4.0",
     "@reduxjs/toolkit": "^1.6.2",
     "@syncfusion/ej2-react-calendars": "^19.3.56",

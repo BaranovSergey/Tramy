@@ -16,10 +16,12 @@ import {
     Button
 } from '@mui/material';
 import CampingTable from "../../camping-table/ui";
+import HikingItems from "../../add-items/add-items";
 export function getSteps() {
     return [
         "Тип похода",
         "Выбор даты",
+        "Распределение вещей",
         "Создание группы",
         "Загрузка маршрута"
     ];
@@ -71,13 +73,33 @@ export function getStepContent(step) {
             );
         case 2:
             return (
-                <>
-                    <CampingTable/>
-                </>
+                <Box
+                    sx={{
+                        marginTop: 25,
+                        marginBottom: 20
+                    }}
+                >
+                    <>
+                        <HikingItems/>
+                    </>
+                </Box>
+            )
+        case 3:
+            return (
+                <Box
+                    sx={{
+                        marginTop: 25,
+                        marginBottom: 20
+                    }}
+                >
+                    <>
+                        <CampingTable/>
+                    </>
+                </Box>
             )
         default:
             return "unknown step"
-        case 3:
+        case 4:
             return (
                 <Box
                     sx={{
@@ -91,5 +113,6 @@ export function getStepContent(step) {
                 </Box>
 
             )
+
     }
 }
