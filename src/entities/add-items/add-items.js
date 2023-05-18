@@ -65,6 +65,7 @@ const HikingItems = () => {
             setNewItem('');
             setNewItemWeight('');
         }
+        console.log('donkey')
     };
 
     const removeItem = (index) => {
