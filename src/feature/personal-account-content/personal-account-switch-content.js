@@ -24,7 +24,7 @@ const PersonalAccountSwitchContent = () => {
                position: "absolute",
                right: 0
            }}>
-               <FormControlLabel control={<Switch defaultChecked />} label="" onChange={toggleChecked} />
+               <FormControlLabel control={<Switch defaultChecked />} label="Ваши маршруты" onChange={toggleChecked} />
            </div>
 
             {checked ? <PersonalAccountTable/> : <SelectedFriends/>}

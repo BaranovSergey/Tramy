@@ -1,20 +1,8 @@
-import {Box, FormControl, FormControlLabel, Radio, RadioGroup} from "@material-ui/core";
+import {Box, FormControlLabel, Radio, RadioGroup} from "@material-ui/core";
 import React, {useState} from "react";
 import {Field} from "react-final-form";
 import BasicDateRangePicker from "../ui/data";
-import GroupCreation from "../../group-creation/ui";
 import MapGlCustom from "../ui/map/ui";
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Paper,
-    TextField,
-    Button
-} from '@mui/material';
 import CampingTable from "../../camping-table/ui";
 import HikingItems from "../../add-items/add-items";
 export function getSteps() {
@@ -23,7 +11,7 @@ export function getSteps() {
         "Выбор даты",
         "Распределение вещей",
         "Создание группы",
-        "Загрузка маршрута"
+        "Загрузка маршрута",
     ];
 }
 
@@ -83,7 +71,7 @@ export function getStepContent(step) {
                         <HikingItems/>
                     </>
                 </Box>
-            )
+            );
         case 3:
             return (
                 <Box
@@ -96,9 +84,8 @@ export function getStepContent(step) {
                         <CampingTable/>
                     </>
                 </Box>
-            )
-        default:
-            return "unknown step"
+            );
+
         case 4:
             return (
                 <Box

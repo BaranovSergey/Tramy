@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
-import { TextField, Button, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@mui/material';
+import {
+    TextField,
+    Button,
+    List,
+    ListItem,
+    ListItemText,
+    ListItemSecondaryAction,
+    IconButton,
+    Card,
+    CardContent,
+} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BackpackIcon from '@mui/icons-material/Backpack';
 import { makeStyles } from '@mui/styles';
-import Typography from "@mui/material/Typography";
-import {Box} from "@material-ui/core";
+import Typography from '@mui/material/Typography';
+import { Box } from '@material-ui/core';
+
 const useStyles = makeStyles(() => ({
     container: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '50%',
+        width: '80%',
         margin: '0 auto',
     },
     inputContainer: {
@@ -20,6 +31,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '16px',
     },
     listContainer: {
+        flexWrap: 'wrap',
         border: '1px solid #ddd',
         borderRadius: '4px',
         padding: '16px',
@@ -32,14 +44,14 @@ const useStyles = makeStyles(() => ({
         alignItems: 'center',
         padding: '8px 16px',
         borderRadius: '15px',
-        backgroundColor: '#ADD8E6',
+        backgroundColor: '#F8F8FF',
         marginBottom: '8px',
     },
     listItemText: {
         flexGrow: 1,
         alignItems: 'center',
-        display: "flex",
-        justifyContent: 'space-between'
+        display: 'flex',
+        justifyContent: 'space-between',
     },
     addButton: {
         marginLeft: '8px',
@@ -65,7 +77,7 @@ const HikingItems = () => {
             setNewItem('');
             setNewItemWeight('');
         }
-        console.log('donkey')
+
     };
 
     const removeItem = (index) => {
@@ -95,35 +107,23 @@ const HikingItems = () => {
                     Добавить
                 </Button>
             </div>
-            {items.length > 0 ? (
-                <div className={classes.listContainer}>
-                    <List>
+            {items.length > 0 && (
+                <div style={{ textAlign: 'center', alignItems: 'center'}}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1rem' }}>
                         {items.map((item, index) => (
-                            <ListItem key={index} className={classes.listItem}>
-                                <BackpackIcon />
-                                {/*<ListItemText*/}
-                                {/*    primary={item.name}*/}
-                                {/*    secondary={`Вес: ${item.weight} кг`}*/}
-                                {/*    className={classes.listItemText}*/}
-                                {/*/>*/}
-                                <Box className={classes.listItemText}>
-                                    <Typography>{item.name}</Typography>
-                                    <Typography>Вес: {item.weight} кг</Typography>
-                                </Box>
-
-                                <IconButton edge="end" aria-label="delete" onClick={() => removeItem(index)}>
-                                    <DeleteIcon />
-                                </IconButton>
-
-                            </ListItem>
+                            <Card key={index} style={{backgroundColor: '#92caf9', width: '200px', marginRight: '1rem', marginBottom: '1rem' }}>
+                                <CardContent>
+                                    <Typography variant="h6">{item.name}</Typography>
+                                    <Typography variant="body1">Вес: {item.weight} кг</Typography>
+                                </CardContent>
+                            </Card>
                         ))}
-                    </List>
+                    </div>
                 </div>
-            ) : (
-                <></>
             )}
         </div>
     );
 };
 
 export default HikingItems;
+

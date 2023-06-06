@@ -64,7 +64,7 @@ const LinaerStepper = () => {
                         })}
                 </Stepper>
                 {
-                    activeStep === 4 ? (
+                    activeStep === 5 ? (
                         <Typography variant="h3" align={"center"}>Поход успешно создан</Typography>
                     ) : (
                         <>
@@ -79,7 +79,7 @@ const LinaerStepper = () => {
                                             <Button variant={"outlined"} onClick={handleBack}
                                                     disabled={activeStep === 0}>Предыдущий шаг</Button>
                                             <Box sx={{flex: '1 1 auto'}}/>
-                                            {activeStep === 3 ? <FinishBtn handleOnSubmit={handleSubmit}/> :
+                                            {activeStep === 4 ? <FinishBtn handleOnSubmit={handleSubmit}/> :
                                                 <NextBtn handleNextStep={handleNext}/>}
                                         </Box>
                                     </form>

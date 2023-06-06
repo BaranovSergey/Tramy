@@ -18,12 +18,12 @@ import {items, solveBackpackProblem} from "./lib/helper";
 
 function CampingTable() {
     const [people, setPeople] = useState([
-        { name: 'John', invited: false, backpackVolume: 0 },
-        { name: 'Jane', invited: false, backpackVolume: 0 },
-        { name: 'Mike', invited: false, backpackVolume: 0 },
-        { name: 'Sarah', invited: false, backpackVolume: 0 },
-        { name: 'David', invited: false, backpackVolume: 0 },
-        { name: 'Emily', invited: false, backpackVolume: 0 },
+        { name: 'Александр', invited: false, backpackVolume: 0 },
+        { name: 'Максим', invited: false, backpackVolume: 0 },
+        { name: 'Марк', invited: false, backpackVolume: 0 },
+        { name: 'Святослав', invited: false, backpackVolume: 0 },
+        { name: 'Даниил', invited: false, backpackVolume: 0 },
+        { name: 'Юрий', invited: false, backpackVolume: 0 },
     ]);
     const [selectedPeople, setSelectedPeople] = useState([]);
     const [backpackSolution, setBackpackSolution] = useState({});
@@ -109,7 +109,7 @@ function CampingTable() {
                         <TableRow>
                             <TableCell>Имя</TableCell>
                             <TableCell align="center">Приглашение отправлено</TableCell>
-                            <TableCell align="center">Размер рюкзака в л.</TableCell>
+                            <TableCell align="center">Переносимый вес </TableCell>
                             <TableCell align="center">Приглашение</TableCell>
                         </TableRow>
                     </TableHead>
@@ -158,7 +158,7 @@ function CampingTable() {
                         <Card key={index} style={{ width: '200px', marginRight: '1rem', marginBottom: '1rem' }}>
                             <CardContent>
                                 <Typography variant="h6">{person.name}</Typography>
-                                <Typography variant="body1">Backpack Volume: {person.backpackVolume}</Typography>
+                                <Typography variant="body1">Вместимость рюкзака: {person.backpackVolume} кг</Typography>
                             </CardContent>
                         </Card>
                     ))}
@@ -174,12 +174,12 @@ function CampingTable() {
                     {selectedPeople.map((person) => (
                         <Card key={person.name} style={{ marginBottom: '1rem' }}>
                             <CardContent>
-                                <Typography variant="h6">Backpack Solution for {person.name}</Typography>
+                                <Typography variant="h6">Набор для: {person.name}</Typography>
                                 <TableContainer component={Paper} style={{ marginTop: '1rem' }}>
                                     <Table>
                                         <TableHead>
                                             <TableRow>
-                                                <TableCell>Item</TableCell>
+                                                <TableCell>Название предмета</TableCell>
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>

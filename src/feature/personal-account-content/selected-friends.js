@@ -66,21 +66,18 @@ export default function Album() {
                 <Grid container spacing={4}>
                     <Card className={classes.card}>
                         <ListItemAvatar>
-                            <Avatar  sx={{ width: 150, height: 150, borderRadius: 100, marginTop: 2}} src="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQBkPxbVOLBMZMjS67PseHuZsL9BiLMyXMd2wJ0qfkv3HhgyRjatrq6AqUZTrVCj9PY" />
+                            <Avatar  sx={{ width: 250, height: 200, borderRadius: 0, marginTop: 2}} src="/Users/baranovsergey/Desktop/Университет/Снимок экрана 2023-06-06 в 20.13.01.png" />
                         </ListItemAvatar>
 
                         <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h6" component="h2">
-                                Имя: Мария
+                                Тип: Лесной
                             </Typography>
                             <Typography>
-                                Фамилия: Иванова
-                            </Typography>
-                            <Typography  >
-                                Email: ivanova121@mail.ru
+                                Дата: 1-03-2022/14-05-2022
                             </Typography>
                             <Typography >
-                                Телефон: 79652838270
+                                Создатель: Вы
                             </Typography>
                         </CardContent>
                         <CardActions>
@@ -95,76 +92,76 @@ export default function Album() {
                 </Grid>
             </Container>
         </main>
-            <main>
-                <Container className={classes.cardGrid} maxWidth="md">
-                    {/* End hero unit */}
-                    <Grid container spacing={4}>
-                        <Card className={classes.card}>
-                            <ListItemAvatar>
-                                <Avatar  sx={{ width: 150, height: 150, borderRadius: 100, marginTop: 2}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Vladimir_Putin_September_5%2C_2022_%28cropped%29.jpg/250px-Vladimir_Putin_September_5%2C_2022_%28cropped%29.jpg" />
-                            </ListItemAvatar>
+            {/*<main>*/}
+            {/*    <Container className={classes.cardGrid} maxWidth="md">*/}
+            {/*        /!* End hero unit *!/*/}
+            {/*        <Grid container spacing={4}>*/}
+            {/*            <Card className={classes.card}>*/}
+            {/*                <ListItemAvatar>*/}
+            {/*                    <Avatar  sx={{ width: 150, height: 150, borderRadius: 100, marginTop: 2}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Vladimir_Putin_September_5%2C_2022_%28cropped%29.jpg/250px-Vladimir_Putin_September_5%2C_2022_%28cropped%29.jpg" />*/}
+            {/*                </ListItemAvatar>*/}
 
-                            <CardContent className={classes.cardContent}>
-                                <Typography gutterBottom variant="h6" component="h2">
-                                    Имя: Владимир
-                                </Typography>
-                                <Typography>
-                                    Фамилия: Путин
-                                </Typography>
-                                <Typography  >
-                                    Email: Putin1@mail.ru
-                                </Typography>
-                                <Typography >
-                                    Телефон: 79652838270
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    Открыть
-                                </Button>
+            {/*                <CardContent className={classes.cardContent}>*/}
+            {/*                    <Typography gutterBottom variant="h6" component="h2">*/}
+            {/*                        Имя: Владимир*/}
+            {/*                    </Typography>*/}
+            {/*                    <Typography>*/}
+            {/*                        Фамилия: Путин*/}
+            {/*                    </Typography>*/}
+            {/*                    <Typography  >*/}
+            {/*                        Email: Putin1@mail.ru*/}
+            {/*                    </Typography>*/}
+            {/*                    <Typography >*/}
+            {/*                        Телефон: 79652838270*/}
+            {/*                    </Typography>*/}
+            {/*                </CardContent>*/}
+            {/*                <CardActions>*/}
+            {/*                    <Button size="small" color="primary">*/}
+            {/*                        Открыть*/}
+            {/*                    </Button>*/}
 
-                            </CardActions>
-                        </Card>
-
-
-                    </Grid>
-                </Container>
-            </main>
-            <main>
-                <Container className={classes.cardGrid} maxWidth="md">
-                    {/* End hero unit */}
-                    <Grid container spacing={4}>
-                        <Card className={classes.card}>
-                            <ListItemAvatar>
-                                <Avatar  sx={{ width: 150, height: 150, borderRadius: 100, marginTop: 2}} src="https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg" />
-                            </ListItemAvatar>
-
-                            <CardContent className={classes.cardContent}>
-                                <Typography gutterBottom variant="h6" component="h2">
-                                    Имя: Алексей
-                                </Typography>
-                                <Typography>
-                                    Фамилия: Петров
-                                </Typography>
-                                <Typography  >
-                                    Email: petrov1@mail.ru
-                                </Typography>
-                                <Typography >
-                                    Телефон: 79652838270
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    Открыть
-                                </Button>
-
-                            </CardActions>
-                        </Card>
+            {/*                </CardActions>*/}
+            {/*            </Card>*/}
 
 
-                    </Grid>
-                </Container>
-            </main>
+            {/*        </Grid>*/}
+            {/*    </Container>*/}
+            {/*</main>*/}
+            {/*<main>*/}
+            {/*    <Container className={classes.cardGrid} maxWidth="md">*/}
+            {/*        /!* End hero unit *!/*/}
+            {/*        <Grid container spacing={4}>*/}
+            {/*            <Card className={classes.card}>*/}
+            {/*                <ListItemAvatar>*/}
+            {/*                    <Avatar  sx={{ width: 150, height: 150, borderRadius: 100, marginTop: 2}} src="https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg" />*/}
+            {/*                </ListItemAvatar>*/}
+
+            {/*                <CardContent className={classes.cardContent}>*/}
+            {/*                    <Typography gutterBottom variant="h6" component="h2">*/}
+            {/*                        Имя: Алексей*/}
+            {/*                    </Typography>*/}
+            {/*                    <Typography>*/}
+            {/*                        Фамилия: Петров*/}
+            {/*                    </Typography>*/}
+            {/*                    <Typography  >*/}
+            {/*                        Email: petrov1@mail.ru*/}
+            {/*                    </Typography>*/}
+            {/*                    <Typography >*/}
+            {/*                        Телефон: 79652838270*/}
+            {/*                    </Typography>*/}
+            {/*                </CardContent>*/}
+            {/*                <CardActions>*/}
+            {/*                    <Button size="small" color="primary">*/}
+            {/*                        Открыть*/}
+            {/*                    </Button>*/}
+
+            {/*                </CardActions>*/}
+            {/*            </Card>*/}
+
+
+            {/*        </Grid>*/}
+            {/*    </Container>*/}
+            {/*</main>*/}
         </React.Fragment>
     );
 }
