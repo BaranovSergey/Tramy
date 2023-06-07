@@ -5,6 +5,10 @@ import BasicDateRangePicker from "../ui/data";
 import MapGlCustom from "../ui/map/ui";
 import CampingTable from "../../camping-table/ui";
 import HikingItems from "../../add-items/add-items";
+import {Provider} from "react-redux";
+import store from "../../add-items/store";
+
+
 export function getSteps() {
     return [
         "Тип похода",
@@ -68,7 +72,9 @@ export function getStepContent(step) {
                     }}
                 >
                     <>
-                        <HikingItems/>
+                        <Provider store={store}>
+                            <HikingItems />
+                        </Provider>
                     </>
                 </Box>
             );
