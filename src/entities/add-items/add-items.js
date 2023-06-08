@@ -35,20 +35,20 @@ const useStyles = makeStyles(() => ({
 
 const HikingItems = () => {
     const [newItem, setNewItem] = useState('');
-    const [newItemWeight, setNewItemWeight] = useState('');
+    const [newItemVolume, setNewItemVolume] = useState('');
     const items = useSelector((state) => state.items);
     const dispatch = useDispatch();
     const classes = useStyles();
 
     const handleAddItem = () => {
-        if (newItem.trim() !== '' && newItemWeight.trim() !== '') {
+        if (newItem.trim() !== '' && newItemVolume.trim() !== '') {
             const newItemObject = {
                 name: newItem,
-                weight: newItemWeight,
+                volume: newItemVolume,
             };
             dispatch(addItem(newItemObject));
             setNewItem('');
-            setNewItemWeight('');
+            setNewItemVolume('');
         }
     };
 
@@ -67,9 +67,9 @@ const HikingItems = () => {
                     className={classes.inputField}
                 />
                 <TextField
-                    value={newItemWeight}
-                    onChange={(e) => setNewItemWeight(e.target.value)}
-                    label="Масса, кг"
+                    value={newItemVolume}
+                    onChange={(e) => setNewItemVolume(e.target.value)}
+                    label="Объем, л"
                     variant="outlined"
                     className={classes.inputField}
                 />
@@ -84,10 +84,10 @@ const HikingItems = () => {
                             <Card key={index} style={{ backgroundColor: '#92caf9', width: '200px', marginRight: '1rem', marginBottom: '1rem' }}>
                                 <CardContent>
                                     <Typography variant="h6">{item.name}</Typography>
-                                    <Typography variant="body1">Вес: {item.weight} кг</Typography>
+                                    <Typography variant="body1">Объем: {item.volume} л</Typography>
                                     <Button
                                         variant="contained"
-                                        color="secondary"
+                                        color="warning"
                                         startIcon={<DeleteIcon />}
                                         onClick={() => handleRemoveItem(index)}
                                     >
@@ -104,6 +104,7 @@ const HikingItems = () => {
 };
 
 export default HikingItems;
+
 
 
 

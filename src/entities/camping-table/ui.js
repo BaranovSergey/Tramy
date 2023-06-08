@@ -14,7 +14,80 @@ import {
     CardContent,
     Typography
 } from '@mui/material';
-import {items, solveBackpackProblem} from "./lib/helper";
+const items = [
+    { name: 'Палатка', volume: 15 },
+    { name: 'Спальный мешок', volume: 10 },
+    { name: 'Спальный коврик', volume: 5 },
+    { name: 'Набор для приготовления пищи', volume: 8 },
+    { name: 'Газовый баллон', volume: 3 },
+    { name: 'Средство от насекомых', volume: 2 },
+    { name: 'Компас', volume: 1 },
+    { name: 'Фонарь', volume: 2 },
+    { name: 'Аптечка', volume: 5 },
+    { name: 'Вода', volume: 4 }
+];
+const getCombination = (items, backpackVolume, usedItems) => {
+    let remainingVolume = backpackVolume;
+    let backpackItems = [];
+    let itemsUsed = false;
+
+    for (let item of items) {
+        if (!usedItems.includes(item.name) && item.volume <= remainingVolume) {
+            usedItems.push(item.name);
+            backpackItems.push(item);
+            remainingVolume -= item.volume;
+            itemsUsed = true;
+        }
+
+        if (remainingVolume === 0) {
+            break;
+        }
+    }
+
+    if (!itemsUsed && backpackItems.length === 0) {
+        return null;
+    }
+
+    return backpackItems;
+};
+
+export const solveBackpackProblem = (people, items) => {
+    const solution = {};
+
+    // Sort the items by volume in descending order
+    let availableItems = [...items].sort((a, b) => b.volume - a.volume);
+
+    // Sort people by backpackVolume in descending order
+    let sortedPeople = [...people].sort((a, b) => b.backpackVolume - a.backpackVolume);
+
+    for (const person of sortedPeople) {
+        const { name, backpackVolume } = person;
+        const usedItems = [];
+        const bestCombination = getCombination(availableItems, backpackVolume, usedItems);
+
+        if (bestCombination === null) {
+            break;
+        }
+
+        solution[name] = bestCombination.map((item) => item.name);
+
+        // Remove used items from the available items list
+        for (const usedItem of bestCombination) {
+            availableItems = availableItems.filter((item) => item.name !== usedItem.name);
+        }
+    }
+
+    return solution;
+};
+
+
+
+
+
+
+
+
+
 
 function CampingTable() {
     const [people, setPeople] = useState([
